@@ -1,0 +1,16 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+ul,
+ol,
+menu {
+    padding: 0;
+    list-style: none;
+}
