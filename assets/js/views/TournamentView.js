@@ -15,7 +15,7 @@ export class TournamentView {
     }
     //Update player stats
     updatePlayerStats(stats) {
-        document.getElementById('player-count').innerText = `Players: ${stats.totalPlayers}`;
+        document.getElementById('player-count').innerText = `Players: ${stats.totalPlayers}/${stats.totalPlayers + stats.reEntries}`;
         document.getElementById('average-stack').innerText = `Average stack: ${stats.averageStack}`;
         document.getElementById('re-entry-count').innerText = `${stats.reEntries}`;
     }

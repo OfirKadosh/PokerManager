@@ -1,0 +1,88 @@
+html {
+  font-size: clamp(14px, 1.8vw, 22px);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.tournament-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+}
+.tournament-container section {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  margin: 0 1rem;
+  padding: 2rem;
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+.tournament-container section header, .tournament-container section article {
+  margin-bottom: 2.5rem;
+}
+.tournament-container section h2, .tournament-container section h3 {
+  color: #4CAF50;
+  margin-top: 0;
+}
+.tournament-container section .middle-section {
+  flex: 3;
+}
+.tournament-container section .left-section .right-section {
+  flex: 2;
+}
+
+.middle-section {
+  justify-content: space-between;
+}
+.middle-section .timers-container {
+  text-align: center;
+}
+.middle-section .timers-container .main-timer {
+  font-style: clamp(3rem, 6vw, 5rem);
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.middle-section .timers-container .timer {
+  display: block;
+  font-style: clamp(1rem, 2.5vw, 1.5rem);
+  margin-top: 0.5rem;
+}
+.middle-section .prize-pool ul {
+  list-style: none;
+  padding: 0;
+}
+.middle-section .prize-pool ul li {
+  margin-bottom: 0.5rem;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+}
+
+.left-section .right-section span {
+  display: block;
+  margin-top: 1rem;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+}
+.left-section .right-section ul {
+  list-style: none;
+  padding: 0;
+}
+.left-section .right-section ul li {
+  margin-bottom: 0.5rem;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+}
+
+/*# sourceMappingURL=styles.css.map */
