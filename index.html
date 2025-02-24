@@ -4,10 +4,66 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Poker Manager</title>
-    <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="stylesheet" href="./assets/styles.css" />
   </head>
   <body>
-    <div id="app"></div>
+    <main class="tournament-container">
+      <!-- Middle Third -->
+      <section class="middle-section">
+        <header class="timers-container">
+          <div class="secondary-timers">
+            <span class="timer" id="break-timer">☕︎ 10:00</span>
+            <span class="timer" id="tournament-duration"
+              >⏱ 00:45:00</span
+            >
+          </div>
+          <div class="main-timer">
+            <span id="level-timer">14:25</span>
+          </div>
+        </header>
+        <article class="prize-pool">
+          <h2>Prize Pool</h2>
+          <ul id="prizes-list">
+            <li>1st: $1000</li>
+            <li>2nd: $600</li>
+            <li>3rd: $400</li>
+            <!-- Additional prizes will populate here -->
+          </ul>
+        </article>
+      </section>
+
+      <!-- Left Third -->
+      <section class="left-section">
+        <header class="player-stats">
+          <h3>Players Info</h3>
+          <span id="player-count">Players: 50/50</span>
+          <span id="average-stack">Average Stack: 5,000</span>
+        </header>
+        <article class="level-structure">
+          <h3>Level Structure</h3>
+          <ul id="levels-list">
+            <li>1 | 15' | 50/100 (100)</li>
+            <li>2 | 15' | 100/200 (200)</li>
+            <li>3 | 15' | 150/300 (300)</li>
+            <!-- Additional levels here -->
+          </ul>
+        </article>
+      </section>
+
+      <!-- Right Third -->
+      <section class="right-section">
+        <header class="current-blinds">
+          <h3>Current Blinds</h3>
+          <span id="blinds-info">100</span>
+          <span id="blinds-info">200</span>
+          <span id="ante-info">Ante: 200</span>
+        </header>
+        <article class="re-entries">
+          <h3>Re-Entries</h3>
+          <span id="re-entry-count">5</span>
+        </article>
+      </section>
+    </main>
 
     <script type="module" src="./assets/js/main.js"></script>
   </body>
