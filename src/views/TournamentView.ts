@@ -3,7 +3,7 @@ import { TournamentStats, Prize, Level } from "../models/TournamentModels.js";
 export class TournamentView {
     //Update timers
     updateTimers(stats: TournamentStats): void {
-        document.getElementById('level-timer')!.innerText = this.formatTime(stats.currentLevel.duration * 60);
+        document.getElementById('level-timer')!.innerText = this.formatTime(stats.currentLevel.duration);
         document.getElementById('break-timer')!.innerText = `☕︎ ${this.formatTime(stats.timeToNextBreakSec)}`;
         document.getElementById('tournament-duration')!.innerText = `⏱ ${this.formatTime(stats.elapsedTimeSec)}`;
     }
@@ -34,7 +34,7 @@ export class TournamentView {
     //Format seconds to HH:MM:SS
     private formatTime(seconds: number): string {
         const h = Math.floor(seconds / 3600).toString().padStart(2, '0');
-        const m = Math.floor(seconds % 3600).toString().padStart(2, '0');
+        const m = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
         const s = (seconds % 60).toString().padStart(2, '0');
         return `${h}:${m}:${s}`;
     }

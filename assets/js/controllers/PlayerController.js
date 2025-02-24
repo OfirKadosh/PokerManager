@@ -8,3 +8,4 @@ export function initPlayerController() {
         appElement.innerHTML = playerView.render(player);
     }
 }
+//# sourceMappingURL=PlayerController.js.map

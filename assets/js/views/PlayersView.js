@@ -3,3 +3,4 @@ export class PlayerView {
         return `<div>${player.id}. ${player.name} - ${player.email}</div>`;
     }
 }
+//# sourceMappingURL=PlayersView.js.map

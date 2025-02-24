@@ -5,3 +5,4 @@ export class Player {
         this.email = email;
     }
 }
+//# sourceMappingURL=Player.js.map
