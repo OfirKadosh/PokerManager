@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     10 * 60 //time to next break
     );
     const tournamentController = new TournamentController(initialStats, initialPrizes, initialLevels);
-    tournamentController.startTournament();
     initPlayerController();
 });
 //# sourceMappingURL=main.js.map

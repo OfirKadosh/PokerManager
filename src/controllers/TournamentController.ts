@@ -6,16 +6,28 @@ export class TournamentController {
     private stats: TournamentStats;
     private prizes: Prize[];
     private levels: Level[];
-    private timerInterval!: number;
+    private timerInterval!: number | null;
+    private isRunning: boolean = false;
+    private channel: BroadcastChannel;
     
     constructor(stats:TournamentStats, prizes:Prize[], levels:Level[]) {
         this.view = new TournamentView();
         this.stats = stats;
         this.prizes = prizes;
         this.levels = levels;
+        this.timerInterval = null;
+        this.channel = new BroadcastChannel("tournament_channel");
+
+        this.channel.onmessage = (event) => {
+            if(event.data === "start") this.startTournament();
+            if(event.data === "pause") this.pauseTournament();
+        };
     }
 
     startTournament(): void {
+        if(this.isRunning) return;
+        
+        this.isRunning = true;
         this.view.updatePrizePool(this.prizes);
         this.view.updatePlayerStats(this.stats);
         this.view.updateCurrentBlinds(this.stats.currentLevel);
@@ -26,7 +38,18 @@ export class TournamentController {
         }, 1000);
     }
 
+    pauseTournament(): void {
+        if(!this.isRunning) return;
+        this.isRunning = false;
+
+        if(this.timerInterval) {
+            clearInterval(this.timerInterval);
+            this.timerInterval = null;
+        }
+    }
+
     private updateTimers(): void {
+        if(!this.isRunning) return;
         this.stats.elapsedTimeSec++;
         this.stats.timeToNextBreakSec--;
         this.stats.currentLevel.duration--;
@@ -42,7 +65,7 @@ export class TournamentController {
             this.stats.currentLevel = this.levels[nextLevel];
             this.view.updateCurrentBlinds(this.stats.currentLevel);
         } else {
-            clearInterval(this.timerInterval);
+            this.pauseTournament();
             console.log('Tournament ended.');
         }
     }

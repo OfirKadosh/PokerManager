@@ -1,6 +1,7 @@
 import { initPlayerController } from "./controllers/PlayerController.js";
 import { TournamentController } from "./controllers/TournamentController.js";
 import { TournamentStats, Level, Prize } from "./models/TournamentModels.js";
+import { AdminController } from "./controllers/AdminController.js";
 
 document.addEventListener('DOMContentLoaded', () => {
   //Initial tournament data setup
@@ -26,6 +27,5 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   const tournamentController = new TournamentController(initialStats, initialPrizes, initialLevels);
-  tournamentController.startTournament();
   initPlayerController();
 });
