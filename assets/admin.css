@@ -1,0 +1,115 @@
+html {
+  font-size: clamp(14px, 1.8vw, 22px);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.admin-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+}
+.admin-container section {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  margin: 0 1rem;
+  padding: 2rem;
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+.admin-container section header, .admin-container section article {
+  margin-bottom: 2.5rem;
+}
+.admin-container section h2, .admin-container section h3 {
+  color: #4CAF50;
+  margin-top: 0;
+}
+.admin-container .middle-section {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.admin-container .middle-section .admin-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.admin-container .middle-section .admin-controls button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  transition: background 0.3s ease-in-out;
+}
+.admin-container .middle-section .admin-controls button:hover {
+  background-color: rgb(60.5577689243, 139.4422310757, 63.7450199203);
+}
+.admin-container .middle-section .admin-controls button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+.admin-container .middle-section .tournament-status {
+  text-align: center;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: bold;
+}
+.admin-container .left-section, .admin-container .right-section {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.admin-container .left-section .level-management h3, .admin-container .right-section .level-management h3 {
+  text-align: center;
+}
+.admin-container .left-section .level-management ul, .admin-container .right-section .level-management ul {
+  list-style: none;
+  padding: 0;
+}
+.admin-container .left-section .level-management ul li, .admin-container .right-section .level-management ul li {
+  background: white;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.admin-container .left-section .level-management ul li button, .admin-container .right-section .level-management ul li button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+  transition: background 0.3s ease-in-out;
+}
+.admin-container .left-section .level-management ul li button:hover, .admin-container .right-section .level-management ul li button:hover {
+  background-color: rgb(213.698630137, 43.8356164384, 26.301369863);
+}
+
+/*# sourceMappingURL=admin.css.map */

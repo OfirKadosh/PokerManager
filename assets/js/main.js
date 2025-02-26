@@ -2,6 +2,11 @@ import { initPlayerController } from "./controllers/PlayerController.js";
 import { TournamentController } from "./controllers/TournamentController.js";
 import { TournamentStats, Level, Prize } from "./models/TournamentModels.js";
 document.addEventListener('DOMContentLoaded', () => {
+    const userType = localStorage.getItem("userType");
+    if (userType !== "player") {
+        alert("Unauthorized access! Redirecting to login...");
+        window.location.href = "login.html";
+    }
     //Initial tournament data setup
     const initialLevels = [
         new Level(1, 15 * 60, 50, 100, 100),
